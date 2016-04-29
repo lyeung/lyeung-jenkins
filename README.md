@@ -1,5 +1,6 @@
-# This is a custom Jenkins docker image to build Elwood project.
-## Build Name: lyeung/jenkins
+# Build Name: lyeung/jenkins
+## This is a custom Jenkins docker image to build Elwood project.
+
 Build command: docker build -t lyeung/jenkins /path-to-docker-jenkins
 
 	(e.g.) `docker build -t lyeung/jenkins /Users/lyeung/code/jenkins`
