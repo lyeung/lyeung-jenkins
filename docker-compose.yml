@@ -1,9 +1,11 @@
 version: '2'
 services:
   web:
-    container_name: lyeung/jenkins-jdk8-maven3-base
-    build: .
-    image: lyeung/jenkins-jdk8-maven3-base
+    container_name: lyeung-jenkins
+    build: lyeung-jenkins
+    image: lyeung-jenkins
+    links:
+      - redis
     ports:
       - '50000:50000'
       - '9080:8080'
@@ -12,7 +14,17 @@ services:
     networks:
       lyeung-jenkins-network:
         ipv4_address: 172.25.1.2
-
+  redis:
+#    container: lyeung-jenkins-redis
+    build: lyeung-jenkins-redis
+    image: lyeung-jenkins-redis
+    ports:
+      - '6379:6379'
+    volumes:
+      - $HOME/docker-redis:/data
+    networks:
+      lyeung-jenkins-network:
+        ipv4_address: 172.25.2.2
 
 networks:
   lyeung-jenkins-network:
