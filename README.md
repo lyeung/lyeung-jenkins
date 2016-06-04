@@ -1,10 +1,15 @@
 # Build Name: lyeung/jenkins
 ## This is a custom Jenkins docker image to build Elwood project.
 
-Build command: docker build -t lyeung/jenkins /path-to-docker-jenkins
+To build lyeung-jenkins image:
 
-	(e.g.) `docker build -t lyeung/jenkins /Users/lyeung/code/jenkins`
+    docker build -t lyeung-jenkins <path-to-lyeung-jenkins/lyeung-jenkins>
 
-Run command: docker run -p 8080:8080 -p 5000:5000 -v /host-path:/var/jenkins_home lyeung/jenkins
+To build lyeung-jenkins-redis image:
 
-	(e.g.) `docker run -p 8080:8080 -p 5000:5000 -v $HOME/docker-jenkins:/var/jenkins_home lyeung/jenkins`
+    docker build -t lyeung-jenkins-redis <path-to-lyeung-jenkins/lyeung-jenkins-redis>
+
+To run: execute startup.sh script
+
+    ./startup.sh
+
