@@ -19,7 +19,7 @@ services:
     build: lyeung-jenkins-redis
     image: lyeung-jenkins-redis
     ports:
-      - '6379:6379'
+      - '16379:6379'
     volumes:
       - $HOME/docker-redis:/data
     networks:
